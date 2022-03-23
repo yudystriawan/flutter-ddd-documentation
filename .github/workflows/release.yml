@@ -1,0 +1,55 @@
+name: Build and Deploy
+
+on:
+  #  whenever  push  To  main  Trigger deployment when branching
+  push:
+    branches: [master]
+  #  Manually trigger deployment
+  workflow_dispatch:
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # “ Last updated ”  etc.  git  Log related information , Need to pull all submitted records
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          #  Select which to use  node  edition
+          node-version: "14"
+
+      #  cache  node_modules
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      #  If the cache misses , Installation dependency
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn
+
+      #  Run the build script
+      - name: Build VuePress site
+        run: yarn docs:build
+
+      #  see  workflow  For more information
+      # @see https://github.com/crazy-max/ghaction-github-pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          #  Deploy to  gh-pages  Branch
+          BRANCH: gh-pages
+          #  The deployment directory is  VuePress  The default output directory for
+          FOLDER: docs/.vuepress/dist
