@@ -1,0 +1,15 @@
+{
+  "name": "flutter-ddd-documentation",
+  "version": "1.0.0",
+  "description": "Flutter Domain Driven Design Documentation",
+  "main": "index.js",
+  "author": "Ade Yudys Triawan",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
