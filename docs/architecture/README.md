@@ -8,3 +8,14 @@ Domain Driven Design atau yang disingkat DDD merupakan salah satu arsitektur yan
 
 ::: tip
 Untuk mempelajari lebih lanjut tentang DDD bisa lihat tutorial dari [Reso Coder](https://resocoder.com/2020/03/09/flutter-firebase-ddd-course-1-domain-driven-design-principles/) 
+:::
+
+## Directory Structure
+
+```
+├── lib
+│   ├── application
+│   ├── domain
+│   ├── infrastructure
+│   └── presentation
+```

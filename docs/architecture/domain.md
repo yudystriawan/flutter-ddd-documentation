@@ -118,7 +118,7 @@ class Product with _$Product {
       );
 
   // menerima data domain valid (none) atau tidak (some)
-  // merupakan fungsi yang mengatur apakah domain valid (sesuai dengan aturan yang digunakan) atau tidak
+  // merupakan fungsi yang mengatur apakah atribut domain yang diinginkan valid (sesuai dengan aturan yang digunakan) atau tidak
   // akan return data dari some(f) jika salah satu atribut tidak sesuai dengan aturan yang digunakan
   // akan return none() jika SELURUH atribut domain yang ada di fungsi ini sesuai dengan aturan yang digunakan.
   Option<ValueFailure<dynamic>> get failureOption {
@@ -139,6 +139,16 @@ class Product with _$Product {
 - Nama harus dalam **Bahasa Inggris**
 - Terdapat factory method `empty()` pada setiap domain.
 - Jika ingin mengirim perubahan data Domain seperti fungsi `Create` atau `Update` ke remote atau local. Pada Domain **WAJIB** membuat fungsi `failureOption`
+
+### Value
+
+Untuk mendapatkan nilai dari atributnya ada beberapa cara.
+
+- Menggunakan `getOrCrash()`. Fungsi ini menampilkan nilai dari atribut jika atribut tersebut **sesuai** dengan aturan atau bondary yang ditetapkan dan akan membuat aplikasi **crash** apabila aturan tersebut tidak valid.
+- Menggunakan `getOrElse(defaultValue)`. Fungsi ini mirip dengan `getOrCrash()` hanya saja kita **WAJIB** memberikan "nilai pengganti" jika atribut mempunyai aturan yang invalid. Tipe data `defaultValue` harus sama dengan value dari atributnya. Contoh: `productName.getOrElse('-'); productPrice.getOrElse(0)`. 
+
+Selain itu dengan menggunakan atribut domain. Kita juga dapat mengecek salah satu atributnya apakah valid (sesuai dengan aturannya) atau tidak dengan menggunakan `isValid()`. Fungsi ini akan return `true` atau `false`.
+
 
 
 ## Domain Failure
