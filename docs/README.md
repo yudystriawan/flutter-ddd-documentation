@@ -4,7 +4,7 @@ heroImage: /images/read-book.svg
 heroText: Hero Title
 tagline: Hero subtitle
 actionText: Get Started →
-actionLink: /architecture/
+actionLink: /getting-started/
 features:
 - title: Architecture
   details: link
