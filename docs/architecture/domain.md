@@ -3,12 +3,6 @@
 
 ## Directory Structure
 ```
-├── core
-│   ├── errors.dart
-│   ├── failures.dart
-│   ├── failures_freezed.dart (generated)
-│   ├── value_objects.dart
-│   └── value_validators.dart
 ├── domain_name
 │   ├── i_domain_name_repository.dart
 │   ├── domain_name.dart
@@ -18,18 +12,10 @@
 │   └── value_objects.dart
 ```
 
-- `core/errors.dart`: merupakan class error yang mengatur jika domain *invalid*.  
-- `core/failures.dart`: merupakan kumpulan *possible failure* untuk inti dari domain.  
-- `core/value_objects.dart`: merupakan class yang merepresentasikan inti dari sebuah domain.  
-- `core/value_validators.dart`: merupakan class yang merumuskan logika atau aturan yang akan dipakai oleh `value_object`.  
 - `domain_name/i_domain_name_repository.dart`: merupakan ***interface*** yang dibuat untuk mengatur object domain.  
 - `domain_name/domain_name.dart`: merupakan object domain itu sendiri. Class ini yang nantinya digunakan pada [Presentation layer](../architecture/presentation.md)
 - `domain_name/domain_name_failure.dart`: merupakan kumpulan *possible failure* yang terjadi pada domain ini.
 - `domain_name/value_objects.dart`: merupakan *property* atau *atribut* dari domain.
-
-::: warning
-Class `ValueObject<T>` yang berada dalam `core/value_objects.dart` tidak boleh diubah
-:::
 
 ## Value Objects
 
@@ -149,6 +135,19 @@ Untuk mendapatkan nilai dari atributnya ada beberapa cara.
 
 Selain itu dengan menggunakan atribut domain. Kita juga dapat mengecek salah satu atributnya apakah valid (sesuai dengan aturannya) atau tidak dengan menggunakan `isValid()`. Fungsi ini akan return `true` atau `false`.
 
+### Create New Domain
+
+Jika ingin membuat boundary atau aturan baru lakukan langkah berikut.
+
+1. Langung ke langkah ke-3 jika ingin memakai boundary yang sudah ada. Tambahkan factory class `ValueFailure<T>` baru pada `root_folder/core/domain/failures.dart` jika `ValueFailure<T>` yang sudah ada tidak memungkinan untuk digunakan. 
+2. Buatlah logika untuk `ValueFailure<T>` pada `root_folder/core/domain/value_validators.dart`.
+3. Pastikan terminal ada di `core/` folder dan jalankan perintah dibawah ini.
+::: details build_runner
+`flutter pub run build_runner build --delete-conflicting-outputs`
+:::
+4. Buat file `value_objects.dart` pada `root_folder/domain/domain_name/value_objects.dart` dan buat class `ValueObject` sesuai dengan aturan yang ingin kalian tambahakan
+5. Buat file domain kalian di folder `root_folder/domain/domain_name/domain_name.dart`
+6. Pastikan terminal ada di `root_folder/` dan jalankan perintah build_runner. (Seperti no-3).
 
 
 ## Domain Failure
@@ -215,7 +214,6 @@ abstract class IProductRepository {
 - Penamaan Class harus sesuai format `IDomainNameRepository` ganti `DomainName` sesuai dengan nama domain. Contoh: `IProductRepository, ITransactionRepository, IPaymentRepository`.
 - Penamaan ditulis dalam **Bahasa Inggris**.
 - Menggunakan format `<Either<DataLeft, DataRight>>`, dimana `DataLeft` merupakan respon jika pada fungsi ini terpadat error, dan `DataRight` merupakan respon jika fungsi ini berhasil dijalankan.
-
 
 
 

@@ -23,6 +23,18 @@ module.exports = {
                     'architecture/presentation',
                 ]
             },
+            {
+                title: 'Flavor',
+                path: '/flavor/',
+                collapsable: false,
+                sidebarDepth: 2,
+                // children: [
+                //     'architecture/domain',
+                //     'architecture/infrastructure',
+                //     'architecture/application',
+                //     'architecture/presentation',
+                // ]
+            },
         ]
         // sidebar: {
         // '/getting-started/': [
