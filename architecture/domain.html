@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Domain | Flutter DDD</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Flutter Domain Driven Design Documentation">
+    
+    <link rel="preload" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css" as="style"><link rel="preload" href="/flutter-ddd-documentation/assets/js/app.f00dd338.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/2.97552d12.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/10.ac67a839.js" as="script"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/11.3a3c13b0.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/12.15111fd3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/13.68dd3558.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/14.5a03002e.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/3.b05f07ce.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/7.f39602d3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/8.3c8cc45d.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/9.f701f32c.js">
+    <link rel="stylesheet" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/flutter-ddd-documentation/" class="home-link router-link-active"><!----> <span class="site-name">Flutter DDD</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/flutter-ddd-documentation/getting-started/" class="sidebar-link">Getting Started</a></li><li><section class="sidebar-group depth-0"><a href="/flutter-ddd-documentation/architecture/" class="sidebar-heading clickable router-link-active open"><span>Architecture</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/flutter-ddd-documentation/architecture/domain.html" aria-current="page" class="active sidebar-link">Domain</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#directory-structure" class="sidebar-link">Directory Structure</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#value-objects" class="sidebar-link">Value Objects</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#rule" class="sidebar-link">Rule</a></li></ul></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#domain-2" class="sidebar-link">Domain</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#source-code-2" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#rule-2" class="sidebar-link">Rule</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#value" class="sidebar-link">Value</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#create-new-domain" class="sidebar-link">Create New Domain</a></li></ul></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#domain-failure" class="sidebar-link">Domain Failure</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#source-code-3" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#rule-3" class="sidebar-link">Rule</a></li></ul></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#interface-repository" class="sidebar-link">Interface Repository</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#source-code-4" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/domain.html#rule-4" class="sidebar-link">Rule</a></li></ul></li></ul></li><li><a href="/flutter-ddd-documentation/architecture/infrastructure.html" class="sidebar-link">Infrastructure</a></li><li><a href="/flutter-ddd-documentation/architecture/application.html" class="sidebar-link">Application</a></li><li><a href="/flutter-ddd-documentation/architecture/presentation.html" class="sidebar-link">Presentation</a></li></ul></section></li><li><a href="/flutter-ddd-documentation/flavor/" class="sidebar-link">Flavor</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="domain"><a href="#domain" class="header-anchor">#</a> Domain</h1> <h2 id="directory-structure"><a href="#directory-structure" class="header-anchor">#</a> Directory Structure</h2> <div class="language- extra-class"><pre class="language-text"><code>├── domain_name
+│   ├── i_domain_name_repository.dart
+│   ├── domain_name.dart
+│   ├── domain_name_freezed.dart (generated)
+│   ├── domain_name_failure.dart
+│   ├── domain_name_failure_freezed.dart (generated)
+│   └── value_objects.dart
+</code></pre></div><ul><li><code>domain_name/i_domain_name_repository.dart</code>: merupakan <em><strong>interface</strong></em> yang dibuat untuk mengatur object domain.</li> <li><code>domain_name/domain_name.dart</code>: merupakan object domain itu sendiri. Class ini yang nantinya digunakan pada <a href="/flutter-ddd-documentation/architecture/presentation.html">Presentation layer</a></li> <li><code>domain_name/domain_name_failure.dart</code>: merupakan kumpulan <em>possible failure</em> yang terjadi pada domain ini.</li> <li><code>domain_name/value_objects.dart</code>: merupakan <em>property</em> atau <em>atribut</em> dari domain.</li></ul> <h2 id="value-objects"><a href="#value-objects" class="header-anchor">#</a> Value Objects</h2> <p>Pada file ini kita mewajibkan untuk mendefinisikan <em><strong>atribut</strong></em> atau <em><strong>property</strong></em> dari Domain. Dengan mendefinisikan suatu object kita dapat menentukan <strong>boundaries</strong> dari sebuah Domain.</p> <h3 id="source-code"><a href="#source-code" class="header-anchor">#</a> Source Code</h3> <p>Untuk pembuatan <code>value_object</code> menggukanan code seperti ini</p> <div class="language- extra-class"><pre class="language-text"><code>class ClassName extends ValueObject&lt;DataType&gt; {
+  @override
+  final Either&lt;ValueFailure&lt;DataType&gt;, DataType&gt; value;
+
+  factory ClassName (DataType input) {
+    // aturan atau boundaries dari object
+   return ProductName._(validateStringNotEmpty(input));
+  }
+
+  const ClassName ._(this.value);
+}
+
+</code></pre></div><p>jika ingin membuat aturan lebih dari satu untuk sebuah objek bisa seperti ini</p> <div class="language- extra-class"><pre class="language-text"><code>...
+factory ClassName (DataType input) {
+    // aturan atau boundaries dari object
+   return ClassName._(validateStringNotEmpty(input).flatMap(validateStringNotEmpty));
+}
+...
+
+</code></pre></div><p>Selain itu, tidak menutup kemungkinan membuat aturan lebih dinamis dengan membuat variable/parameter/argument.</p> <div class="language- extra-class"><pre class="language-text"><code>class ClassName extends ValueObject&lt;String&gt; {
+  @override
+  final Either&lt;ValueFailure&lt;String&gt;, String&gt; value;
+
+  static const maxStringLength = 1000;
+
+  factory ClassName(String input) {
+    return ClassName._(validateMaxStringLength(input, maxStringLength).flatMap(validateStringNotEmpty));
+  }
+
+  const ClassName._(this.value);
+}
+</code></pre></div><h3 id="rule"><a href="#rule" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan Class Value Object harus memiliki kata domain-nya, misal: <code>ProductName, ProductDescription, ProductPrice</code></li> <li>Nama harus dalam <strong>Bahasa Inggris</strong></li> <li>Penamaan menggunakan <code>camelCase</code> dengan huruf kapital di awal karakter.</li></ul> <h2 id="domain-2"><a href="#domain-2" class="header-anchor">#</a> Domain</h2> <p>Mungkin lebih umum dapat dibilang seperti model. Merupakan class yang menampung data object.</p> <h3 id="source-code-2"><a href="#source-code-2" class="header-anchor">#</a> Source Code</h3> <p>Pembuatan Domain sama seperti pembuatan Object Class pada umumnya, tetapi pada arsitektur ini kami menggunakan <a href="https://pub.dev/packages/freezed" target="_blank" rel="noopener noreferrer">Freezed<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> untuk membantu dalam pembuatan <strong>immutable class</strong>.</p> <div class="language- extra-class"><pre class="language-text"><code>@freezed
+class Product with _$Product {
+  const Product._();
+  const factory Product({
+    required UniqueId id,
+    required ProductName name,
+    required ProductDescription description,
+    required ProductPrice price,
+  }) = _Product;
+
+  // default domain
+  // dengan menggunakan factory pattern kita bisa mendefinisikan nilai default hanya dengan memanggil fungsi class factory.
+  factory Product.empty() =&gt; Product(
+        id: UniqueId(),
+        name: ProductName(''),
+        description: ProductDescription(''),
+        price: ProductPrice(0),
+      );
+
+  // menerima data domain valid (none) atau tidak (some)
+  // merupakan fungsi yang mengatur apakah atribut domain yang diinginkan valid (sesuai dengan aturan yang digunakan) atau tidak
+  // akan return data dari some(f) jika salah satu atribut tidak sesuai dengan aturan yang digunakan
+  // akan return none() jika SELURUH atribut domain yang ada di fungsi ini sesuai dengan aturan yang digunakan.
+  Option&lt;ValueFailure&lt;dynamic&gt;&gt; get failureOption {
+    return name.failureOrUnit
+        .andThen(description.failureOrUnit)
+        .andThen(price.failureOrUnit)
+        .fold(
+          (f) =&gt; some(f),
+          (_) =&gt; none(),
+        );
+  }
+}
+</code></pre></div><h3 id="rule-2"><a href="#rule-2" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan Class Domain harus jelas, misal <code>Product, Transaction, User</code></li> <li>Nama harus dalam <strong>Bahasa Inggris</strong></li> <li>Terdapat factory method <code>empty()</code> pada setiap domain.</li> <li>Jika ingin mengirim perubahan data Domain seperti fungsi <code>Create</code> atau <code>Update</code> ke remote atau local. Pada Domain <strong>WAJIB</strong> membuat fungsi <code>failureOption</code></li></ul> <h3 id="value"><a href="#value" class="header-anchor">#</a> Value</h3> <p>Untuk mendapatkan nilai dari atributnya ada beberapa cara.</p> <ul><li>Menggunakan <code>getOrCrash()</code>. Fungsi ini menampilkan nilai dari atribut jika atribut tersebut <strong>sesuai</strong> dengan aturan atau bondary yang ditetapkan dan akan membuat aplikasi <strong>crash</strong> apabila aturan tersebut tidak valid.</li> <li>Menggunakan <code>getOrElse(defaultValue)</code>. Fungsi ini mirip dengan <code>getOrCrash()</code> hanya saja kita <strong>WAJIB</strong> memberikan &quot;nilai pengganti&quot; jika atribut mempunyai aturan yang invalid. Tipe data <code>defaultValue</code> harus sama dengan value dari atributnya. Contoh: <code>productName.getOrElse('-'); productPrice.getOrElse(0)</code>.</li></ul> <p>Selain itu dengan menggunakan atribut domain. Kita juga dapat mengecek salah satu atributnya apakah valid (sesuai dengan aturannya) atau tidak dengan menggunakan <code>isValid()</code>. Fungsi ini akan return <code>true</code> atau <code>false</code>.</p> <h3 id="create-new-domain"><a href="#create-new-domain" class="header-anchor">#</a> Create New Domain</h3> <p>Jika ingin membuat boundary atau aturan baru lakukan langkah berikut.</p> <ol><li>Langung ke langkah ke-3 jika ingin memakai boundary yang sudah ada. Tambahkan factory class <code>ValueFailure&lt;T&gt;</code> baru pada <code>root_folder/core/domain/failures.dart</code> jika <code>ValueFailure&lt;T&gt;</code> yang sudah ada tidak memungkinan untuk digunakan.</li> <li>Buatlah logika untuk <code>ValueFailure&lt;T&gt;</code> pada <code>root_folder/core/domain/value_validators.dart</code>.</li> <li>Pastikan terminal ada di <code>core/</code> folder dan jalankan perintah dibawah ini.</li></ol> <details class="custom-block details"><summary>build_runner</summary> <p><code>flutter pub run build_runner build --delete-conflicting-outputs</code></p></details> <ol start="4"><li>Buat file <code>value_objects.dart</code> pada <code>root_folder/domain/domain_name/value_objects.dart</code> dan buat class <code>ValueObject</code> sesuai dengan aturan yang ingin kalian tambahakan</li> <li>Buat file domain kalian di folder <code>root_folder/domain/domain_name/domain_name.dart</code></li> <li>Pastikan terminal ada di <code>root_folder/</code> dan jalankan perintah build_runner. (Seperti no-3).</li></ol> <h2 id="domain-failure"><a href="#domain-failure" class="header-anchor">#</a> Domain Failure</h2> <p>Pada saat ingin melakukan perubahan CRUD baik melalui remote (server) atau local terdapat kemungkinan terjadinya error yang mungkin terjadi berhubungan dengan Domain tersebut. Dengan memetakan kemungkinan failure yang akan terjadi dari segi developer akan lebih mudah untuk debug fungsi dan dari segi UI dapat dengan mudah menampilkan response error yang sesuai.</p> <h3 id="source-code-3"><a href="#source-code-3" class="header-anchor">#</a> Source Code</h3> <p>Contoh failure yang wajib ada di setiap Domain</p> <div class="language- extra-class"><pre class="language-text"><code>@freezed
+abstract class DomainNameFailure with _$DomainNameFailure {
+  // failure yang tidak dapat kita duga, atau bisa digunakan sebagai default failure dari domain Product
+  const factory DomainNameFailure.unexpected() = _Unexpected;
+  
+  // merupakan default error jika terdapat fungsi yang berhubungan dengan remote data.
+  const factory DomainNameFailure.serverError(ApiFailure f) = _ServerError;
+}
+</code></pre></div><p>Kita bisa menambahkan failure lainnya yang berhubungan dengan Domain tersebut juga. Seperti contoh pada class <code>ProductFailure</code> dibawah</p> <div class="language- extra-class"><pre class="language-text"><code>@freezed
+abstract class ProductFailure with _$ProductFailure {
+    ...
+    const factory ProductFailure.unableToUpdate() = _UnableToUpdate;
+    const factory ProductFailure.unableToInsert() = _UnableToInsert;
+    const factory ProductFailure.unableToDelete() = _UnableToDelete;
+    const factory ProductFailure.notFound() = _NotFound;
+}
+
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Penggunaan domain failure tidak terpaku pada contoh diatas, domain failure dapat ditambahakan atau dikurangi sesuai dengan kebutuhan domain itu sendiri</p></div> <h3 id="rule-3"><a href="#rule-3" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan Class Domain Failure memiliki kata pertama domain-nya. Contoh: <code>ProductFailure, TransactionFailure, PaymentFalure</code>.</li> <li>Nama harus dalam <strong>Bahasa Inggris</strong></li> <li>Penamaan method factory harus memiliki makna yang jelas (tidak ambigu).</li></ul> <h2 id="interface-repository"><a href="#interface-repository" class="header-anchor">#</a> Interface Repository</h2> <p>Pada contoh ini kami menggunakan <code>i_product_repository.dart</code>. Pada <strong>dart</strong> tidak ada interface, tetapi kita bisa mengakalinya dengan menggunakan fungsi <code>abstract class</code>. Class ini bertujuan untuk mengumpukan data yang berhubungan dengan <strong>domain</strong>nya. Biasanya tempat untuk melakukan fungsi CRUD.</p> <h3 id="source-code-4"><a href="#source-code-4" class="header-anchor">#</a> Source Code</h3> <div class="language- extra-class"><pre class="language-text"><code>abstract class IProductRepository {
+  Future&lt;Either&lt;ProductFailure, KtList&lt;Product&gt;&gt;&gt; loadProducts();
+  Future&lt;Either&lt;ProductFailure, Product&gt;&gt; loadProduct(UniqueId id);
+  Future&lt;Either&lt;ProductFailure, Unit&gt;&gt; addProduct(Product product);
+  Future&lt;Either&lt;ProductFailure, Unit&gt;&gt; editProduct(Product product);
+  Future&lt;Either&lt;ProductFailure, Unit&gt;&gt; removeProduct(UniqueId id);
+}
+</code></pre></div><h3 id="rule-4"><a href="#rule-4" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan Class harus sesuai format <code>IDomainNameRepository</code> ganti <code>DomainName</code> sesuai dengan nama domain. Contoh: <code>IProductRepository, ITransactionRepository, IPaymentRepository</code>.</li> <li>Penamaan ditulis dalam <strong>Bahasa Inggris</strong>.</li> <li>Menggunakan format <code>&lt;Either&lt;DataLeft, DataRight&gt;&gt;</code>, dimana <code>DataLeft</code> merupakan respon jika pada fungsi ini terpadat error, dan <code>DataRight</code> merupakan respon jika fungsi ini berhasil dijalankan.</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/flutter-ddd-documentation/getting-started/" class="prev">
+        Getting Started
+      </a></span> <span class="next"><a href="/flutter-ddd-documentation/architecture/infrastructure.html">
+        Infrastructure
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/flutter-ddd-documentation/assets/js/app.f00dd338.js" defer></script><script src="/flutter-ddd-documentation/assets/js/2.97552d12.js" defer></script><script src="/flutter-ddd-documentation/assets/js/10.ac67a839.js" defer></script>
+  </body>
+</html>

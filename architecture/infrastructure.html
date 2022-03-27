@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Infrastructure | Flutter DDD</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Flutter Domain Driven Design Documentation">
+    
+    <link rel="preload" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css" as="style"><link rel="preload" href="/flutter-ddd-documentation/assets/js/app.f00dd338.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/2.97552d12.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/11.3a3c13b0.js" as="script"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/10.ac67a839.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/12.15111fd3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/13.68dd3558.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/14.5a03002e.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/3.b05f07ce.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/7.f39602d3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/8.3c8cc45d.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/9.f701f32c.js">
+    <link rel="stylesheet" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/flutter-ddd-documentation/" class="home-link router-link-active"><!----> <span class="site-name">Flutter DDD</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/flutter-ddd-documentation/getting-started/" class="sidebar-link">Getting Started</a></li><li><section class="sidebar-group depth-0"><a href="/flutter-ddd-documentation/architecture/" class="sidebar-heading clickable router-link-active open"><span>Architecture</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/flutter-ddd-documentation/architecture/domain.html" class="sidebar-link">Domain</a></li><li><a href="/flutter-ddd-documentation/architecture/infrastructure.html" aria-current="page" class="active sidebar-link">Infrastructure</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#directory-structure" class="sidebar-link">Directory Structure</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#dto-data-transfer-object" class="sidebar-link">DTO (Data Transfer Object)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#rule" class="sidebar-link">Rule</a></li></ul></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#local-or-remote-data-provider" class="sidebar-link">Local or Remote Data Provider</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#source-code-2" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#rule-2" class="sidebar-link">Rule</a></li></ul></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#repository" class="sidebar-link">Repository</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#sourcecode" class="sidebar-link">SourceCode</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/architecture/infrastructure.html#rule-3" class="sidebar-link">Rule</a></li></ul></li></ul></li><li><a href="/flutter-ddd-documentation/architecture/application.html" class="sidebar-link">Application</a></li><li><a href="/flutter-ddd-documentation/architecture/presentation.html" class="sidebar-link">Presentation</a></li></ul></section></li><li><a href="/flutter-ddd-documentation/flavor/" class="sidebar-link">Flavor</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="infrastructure"><a href="#infrastructure" class="header-anchor">#</a> Infrastructure</h1> <h2 id="directory-structure"><a href="#directory-structure" class="header-anchor">#</a> Directory Structure</h2> <p>Contoh struktur folder</p> <div class="language- extra-class"><pre class="language-text"><code>├── infrasctructure
+│   ├── product
+│   │   ├── data_sources
+│   │   │   ├── product_local_data_provider.dart (jika data dari local)
+│   │   │   └── product_remote_data_provider.dart (jika data dari server)
+│   │   ├── product_dtos.dart
+│   │   ├── product_dtos.freezed.dart (generated file)
+│   │   ├── product_dtos.g.dart (generated file)
+│   │   └── product_repository.dart
+</code></pre></div><ul><li><code>product/data_sources/product_local_data_provider.dart</code>: file yang mengatur proses pengambilan atau perubahan data yang terjadi secara lokal.</li> <li><code>product/data_sources/product_remote_data_provider.dart</code>: file yang mengatur proses pengambilan atau perubahan data yang terjadi di server.</li> <li><code>product/product_dtos.dart</code>: merupakan file yang menampung objek data product.</li> <li><code>product/product_repository</code>: merupakan file yang berisi class implementasi dari <code>interface repository</code>.</li></ul> <h2 id="dto-data-transfer-object"><a href="#dto-data-transfer-object" class="header-anchor">#</a> DTO (Data Transfer Object)</h2> <p>Merupakan class model yang menampung data untuk/dari extenal layer (local or remote data provider).</p> <h3 id="source-code"><a href="#source-code" class="header-anchor">#</a> Source Code</h3> <p>Pada pembuata DTO, kami menggunakan bantuan dari <a href="https://link" target="_blank" rel="noopener noreferrer">Freezed<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>, <a href="https://link" target="_blank" rel="noopener noreferrer">JsonAnnotation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. Contoh dari penerapan DTO:</p> <div class="language- extra-class"><pre class="language-text"><code>part 'product_dtos.freezed.dart';
+part 'product_dtos.g.dart';
+
+@freezed
+class ProductDto with _$ProductDto {
+  const ProductDto._();
+  const factory ProductDto({
+    @JsonKey(name: 'id') required String id,
+    @JsonKey(name: 'product_name') required String name,
+    @JsonKey(name: 'product_description') required String description,
+    @JsonKey(name: 'product_price') required double price,
+  }) = _ProductDto;
+
+  // WAJIB, untuk generate model ProductDto yang nantinya digunakan untuk parsing ke/dari JSON
+  factory ProductDto.fromJson(Map&lt;String, dynamic&gt; json) =&gt;
+      _$ProductDtoFromJson(json);
+
+  // untuk generate model ProductDto dari domain Product.
+  factory ProductDto.fromDomain(Product product) =&gt; ProductDto(
+        id: product.id.getOrCrash(),
+        name: product.name.getOrCrash(),
+        description: product.description.getOrCrash(),
+        price: product.price.getOrCrash().toDouble(),
+      );
+
+  // untuk generate domain Product dari model ProductDto
+  Product toDomain() =&gt; Product(
+        id: UniqueId.fromUniqueString(id),
+        name: ProductName(name),
+        description: ProductDescription(description),
+        price: ProductPrice(price),
+      );
+}
+</code></pre></div><h3 id="rule"><a href="#rule" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan file dalam bentuk ditambahkan <code>_dtos.dart</code></li> <li>Penamaan class atau file dalam bahasa inggris.</li></ul> <h2 id="local-or-remote-data-provider"><a href="#local-or-remote-data-provider" class="header-anchor">#</a> Local or Remote Data Provider</h2> <p>merupakan class yang hanya mengatur proses pengambilan, pengiriman dan perubahan data. Dapat dilakukan oleh lokal (Database local) atau pada remote (Server melalui API). Pada file ini proses <strong>HANYA</strong> terbatas untuk proses tersebut.</p> <h3 id="source-code-2"><a href="#source-code-2" class="header-anchor">#</a> Source Code</h3> <p>Ini merupakan contoh dari penerapan <code>RemoteDataProvider</code>.</p> <div class="language- extra-class"><pre class="language-text"><code>@injectable
+class ProductRemoteDataProvider {
+    final ApiClient _apiClient;
+
+    ProductRemoteDataProvider(this._apiClient);
+
+    Future&lt;DC&lt;ApiFailure, List&lt;ProductDto&gt;&gt;&gt; fetchProducts() async {
+        try {
+        final response = await _apiClient.get(ApiPath.getProducts);
+
+        // return when success
+        if (response.statusCode == 200) {
+            final items = response.data['items'] as List;
+            final dtos = items
+                .map((e) =&gt; ProductDto.fromJson(e as Map&lt;String, dynamic&gt;))
+                .toList();
+            return DC.data(dtos);
+        }
+
+        // return when failure
+        return DC.error(
+          ApiFailure.serverFailure(code: response.statusCode, errMessage: response.statusMessage,));
+        } on ApiFailure catch (e) {
+            return DC.error(e);
+        } catch (e) {
+            // return when unexpected error happens.
+            return DC.error(const ApiFailure.unexpectedFailure());
+        }
+  }
+}
+</code></pre></div><h3 id="rule-2"><a href="#rule-2" class="header-anchor">#</a> Rule</h3> <ul><li>Penamaan file dan class ditulis dalam bahasa inggris</li> <li><code>return</code> value dari setiap method/fungsinya menggunakan bantuan dari <a href="https://pub.dev/packages/data_channel" target="_blank" rel="noopener noreferrer">DataChannel<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <code>Future&lt;DC&lt;ApiFailure, DataTypeWhenSuccess&gt;&gt;</code></li> <li><strong>WAJIB</strong> menggunakan <code>try-catch</code>.</li> <li>Pada <code>remoteDataProvider</code> Terdapat <code>catch</code> untuk <code>ApiFailure</code> untuk meng-handle error yang disebabkan oleh response API.</li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Untuk memudahkan programmer dalam men-trace error, dapat menggunakan bantuan <code>debutPrint()</code> atau <code>log()</code></p></div> <h2 id="repository"><a href="#repository" class="header-anchor">#</a> Repository</h2> <p>Class ini merupakan class yang menerapkan <a href="https://link" target="_blank" rel="noopener noreferrer">Interface Repository<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <h3 id="sourcecode"><a href="#sourcecode" class="header-anchor">#</a> SourceCode</h3> <p>Contoh dari <code>repository</code>:</p> <div class="language- extra-class"><pre class="language-text"><code>@Injectable(as: IProductRepository)
+class ProductRepository implements IProductRepository {
+  final ProductRemoteDataProvider _remoteDataProvider;
+
+  ProductRepository(this._remoteDataProvider);
+
+  @override
+  Future&lt;Either&lt;AppException, KtList&lt;Product&gt;&gt;&gt; loadProducts() async {
+    try {
+      final response = await _remoteDataProvider.fetchProducts();
+      if (response.hasError) {
+        return left(response.error!);
+      }
+
+      final products =
+          response.data!.map((e) =&gt; e.toDomain()).toImmutableList();
+
+      return right(products);
+    } catch (e, s) {
+      log('loadProducts', name: 'ProductRepository', error: e, stackTrace: s);
+      return left(const AppException.unexpectedException());
+    }
+  }
+
+  ...
+}
+</code></pre></div><h3 id="rule-3"><a href="#rule-3" class="header-anchor">#</a> Rule</h3> <ul><li>Nama class harus sama dengan nama Interfacenya (dihilangkan huruf I)</li> <li>Terdapat <code>try-catch</code></li> <li>Terdapat pengecekan <code>response.hasError</code></li> <li>Untuk mempermudah programmer dalam trace error, dapat menggunakan bantuakn <code>log()</code>.</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/flutter-ddd-documentation/architecture/domain.html" class="prev">
+        Domain
+      </a></span> <span class="next"><a href="/flutter-ddd-documentation/architecture/application.html">
+        Application
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/flutter-ddd-documentation/assets/js/app.f00dd338.js" defer></script><script src="/flutter-ddd-documentation/assets/js/2.97552d12.js" defer></script><script src="/flutter-ddd-documentation/assets/js/11.3a3c13b0.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Flavor | Flutter DDD</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Flutter Domain Driven Design Documentation">
+    
+    <link rel="preload" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css" as="style"><link rel="preload" href="/flutter-ddd-documentation/assets/js/app.f00dd338.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/2.97552d12.js" as="script"><link rel="preload" href="/flutter-ddd-documentation/assets/js/13.68dd3558.js" as="script"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/10.ac67a839.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/11.3a3c13b0.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/12.15111fd3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/14.5a03002e.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/3.b05f07ce.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/7.f39602d3.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/8.3c8cc45d.js"><link rel="prefetch" href="/flutter-ddd-documentation/assets/js/9.f701f32c.js">
+    <link rel="stylesheet" href="/flutter-ddd-documentation/assets/css/0.styles.398b0d1f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/flutter-ddd-documentation/" class="home-link router-link-active"><!----> <span class="site-name">Flutter DDD</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/flutter-ddd-documentation/getting-started/" class="sidebar-link">Getting Started</a></li><li><section class="sidebar-group depth-0"><a href="/flutter-ddd-documentation/architecture/" class="sidebar-heading clickable"><span>Architecture</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/flutter-ddd-documentation/architecture/domain.html" class="sidebar-link">Domain</a></li><li><a href="/flutter-ddd-documentation/architecture/infrastructure.html" class="sidebar-link">Infrastructure</a></li><li><a href="/flutter-ddd-documentation/architecture/application.html" class="sidebar-link">Application</a></li><li><a href="/flutter-ddd-documentation/architecture/presentation.html" class="sidebar-link">Presentation</a></li></ul></section></li><li><a href="/flutter-ddd-documentation/flavor/" aria-current="page" class="active sidebar-link">Flavor</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/flavor/#source-code" class="sidebar-link">Source Code</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/flavor/#firebase-config" class="sidebar-link">Firebase Config</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/flavor/#build-or-run" class="sidebar-link">Build or Run</a></li><li class="sidebar-sub-header"><a href="/flutter-ddd-documentation/flavor/#reference" class="sidebar-link">Reference</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="flavor"><a href="#flavor" class="header-anchor">#</a> Flavor</h1> <p>Pada arsitektur ini menggunakan 3 flavor</p> <ol><li>dev</li> <li>stage</li> <li>prod</li></ol> <h2 id="source-code"><a href="#source-code" class="header-anchor">#</a> Source Code</h2> <p>class <code>FlavorConfig</code> dapat ditemukan di <code>root_folder/core/lib/flavor/flavor_config.dart</code>.</p> <div class="language- extra-class"><pre class="language-text"><code>enum Flavor { dev, stage, prod }
+
+class FlavorConfig {
+  final String appTitle;
+  final String baseUrl;
+  final Flavor flavor;
+
+  static FlavorConfig? _instance;
+
+  factory FlavorConfig({
+    required String appTitle,
+    required String baseUrl,
+    required Flavor flavor,
+  }) {
+    return _instance ??= FlavorConfig._internal(appTitle, baseUrl, flavor);
+  }
+
+  FlavorConfig._internal(
+    this.appTitle,
+    this.baseUrl,
+    this.flavor,
+  );
+
+  static FlavorConfig get instance =&gt; _instance!;
+  static bool get isDevelopment =&gt; _instance?.flavor == Flavor.dev;
+  static bool get isStaging =&gt; _instance?.flavor == Flavor.stage;
+  static bool get isProduction =&gt; _instance?.flavor == Flavor.prod;
+}
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Kalian dapat menambahkan atribut yang sesuai dengan kebutuhan kalian</p></div> <h2 id="firebase-config"><a href="#firebase-config" class="header-anchor">#</a> Firebase Config</h2> <p>Jika ingin menambahkan pengaturan untuk Firebase, tentunya kita harus menambahkan file <code>google-services.json</code> (Android) dan <code>GoogleService-Info.plist</code>(iOS).</p> <p>Untuk pemasangan file tersebut, bisa dilihat pada <a href="/flutter-ddd-documentation/flavor/#reference">Referensi</a></p> <h2 id="build-or-run"><a href="#build-or-run" class="header-anchor">#</a> Build or Run</h2> <p>Untuk menjalankan atau build aplikasi. data menambahakan argument berikut</p> <details class="custom-block details"><summary>Build (Android)</summary> <ul><li><code>flutter build apk -t lib/main_dev.dart --flavor dev</code></li> <li><code>flutter build apk -t lib/main_stage.dart --flavor dev</code></li> <li><code>flutter build apk -t lib/main_prod.dart --flavor prod</code></li></ul></details> <details class="custom-block details"><summary>Run</summary> <ul><li><code>flutter run -t lib/main_dev.dart --flavor dev</code></li> <li><code>flutter run -t lib/main_stage.dart --flavor dev</code></li> <li><code>flutter run -t lib/main_prod.dart --flavor prod</code></li></ul></details> <h2 id="reference"><a href="#reference" class="header-anchor">#</a> Reference</h2> <ul><li><a href="https://www.youtube.com/watch?v=4Y7WaeU3P60" target="_blank" rel="noopener noreferrer">youtube<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b" target="_blank" rel="noopener noreferrer">medium<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/flutter-ddd-documentation/architecture/presentation.html" class="prev">
+        Presentation
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/flutter-ddd-documentation/assets/js/app.f00dd338.js" defer></script><script src="/flutter-ddd-documentation/assets/js/2.97552d12.js" defer></script><script src="/flutter-ddd-documentation/assets/js/13.68dd3558.js" defer></script>
+  </body>
+</html>
