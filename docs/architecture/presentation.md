@@ -39,3 +39,15 @@ Layer khusus untuk yang terdapat berbagai macam komponen UI.
 - **Dilarang keras** menggunakan `Widget` sebagai variabel ataupun fungsi. `Widget` **WAJIB** berupa class yang extend `StatelessWidget`atau `StatefulWidget` dan dibuatkan file-nya sendiri.
 - Dalam pembuatan UI, setiap page **WAJIB** dipisah menjadi komponen-komponen kecil dan ditaruh didalam `page_name/widgets/` folder. Untuk memudahkan dalam pencarian code.
 - Jika ingim membuat komponen `Widget` yang **dipakai secara global**. Taruh komponen tersebut didalam folder `components/`.
+
+## Route
+
+Untuk membuat page route baru hal yang harus dilakukan adalah
+
+1. Pada file `app_router.dart` tambahkan class yang akan menjadi `page`
+2. Buka terminal, dan pastikan berada pada root directory. dan jalankan `flutter pub run build_runner build --delete-conflicting-outputs`.
+3. selesai.
+
+::: warning
+Info lebih lanjut bisa di cek di [auto_router]([https://link](https://pub.dev/packages/auto_route)).
+:::
