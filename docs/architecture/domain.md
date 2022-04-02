@@ -75,7 +75,7 @@ class ClassName extends ValueObject<String> {
 - Penamaan menggunakan `camelCase` dengan huruf kapital di awal karakter.
 
 
-## Domain
+## Domain (Model)
 
 Mungkin lebih umum dapat dibilang seperti model. Merupakan class yang menampung data object.
 
