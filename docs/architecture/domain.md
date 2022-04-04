@@ -165,7 +165,7 @@ abstract class DomainNameFailure with _$DomainNameFailure {
   const factory DomainNameFailure.unexpected() = _Unexpected;
   
   // merupakan default error jika terdapat fungsi yang berhubungan dengan remote data.
-  const factory DomainNameFailure.serverError(ApiFailure f) = _ServerError;
+  const factory DomainNameFailure.serverError() = _ServerError;
 }
 ```
 
