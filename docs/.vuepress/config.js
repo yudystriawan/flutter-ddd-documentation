@@ -28,12 +28,12 @@ module.exports = {
                 path: '/flavor/',
                 collapsable: false,
                 sidebarDepth: 2,
-                // children: [
-                //     'architecture/domain',
-                //     'architecture/infrastructure',
-                //     'architecture/application',
-                //     'architecture/presentation',
-                // ]
+            },
+            {
+                title: 'Clean Code',
+                path: '/clean-code/',
+                collapsable: false,
+                sidebarDepth: 2,
             },
         ]
         // sidebar: {
